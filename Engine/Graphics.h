@@ -66,6 +66,12 @@ public:
 	void DrawRectByDim(int x0, int y0, int width, int height, Color c) {
 		DrawRect(x0, x0 + width, y0, y0 + height, c);
 	}
+	void DrawRectFromCenter(int center_x, int center_y, int halfWidth, int halfHeight, Color c) {
+		DrawRectByDim(center_x, center_y, halfWidth, halfHeight, c);
+		halfWidth *= -1;
+		halfHeight *= -1;
+		DrawRectByDim(center_x, center_y, halfWidth, halfHeight, c);
+	}
 	~Graphics();
 private:
 	Microsoft::WRL::ComPtr<IDXGISwapChain>				pSwapChain;
