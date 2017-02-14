@@ -67,10 +67,11 @@ public:
 		DrawRect(x0, x0 + width, y0, y0 + height, c);
 	}
 	void DrawRectFromCenter(int center_x, int center_y, int halfWidth, int halfHeight, Color c) {
-		DrawRectByDim(center_x, center_y, halfWidth, halfHeight, c);
-		halfWidth *= -1;
-		halfHeight *= -1;
-		DrawRectByDim(center_x, center_y, halfWidth, halfHeight, c);
+		for (int y = center_y - halfHeight; y < center_y + halfHeight; ++y) {
+			for (int x = center_x - halfWidth; x < center_x + halfWidth; ++x) {
+				PutPixel(x, y, c);
+			}
+		}
 	}
 	~Graphics();
 private:
