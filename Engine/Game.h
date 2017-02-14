@@ -24,6 +24,7 @@
 #include "Mouse.h"
 #include "Graphics.h"
 #include "PlayerShip.h"
+#include "Position.h"
 
 class Game
 {

@@ -38,10 +38,27 @@ void Game::Go()
 
 void Game::UpdateModel()
 {
+	if (player.isAlive) {
+		if (player.GetHP() >= 0) {
+			player.isAlive = false;
+		}
+		if (wnd.kbd.KeyIsPressed(VK_LEFT)) {
+			player.pos.x -= 5;
+			player.ClampToScreen();
+		}
+		else if (wnd.kbd.KeyIsPressed(VK_RIGHT)) {
+			player.pos.x += 5;
+			player.ClampToScreen();
+		}
+		if (wnd.kbd.KeyIsPressed(VK_SPACE)) {
+			//fire
+		}
+		
+	}
 }
 
 void Game::ComposeFrame()
 {
 	player.Draw(gfx);
-	gfx.PutPixel(700, 700, Colors::White);
+	gfx.PutPixel(player.pos.x, player.pos.y, Colors::White);
 }
