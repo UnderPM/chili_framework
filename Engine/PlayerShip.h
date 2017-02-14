@@ -11,4 +11,6 @@ public:
 private:
 	int hp = 100;
 	float cooldownTime = 0.8f;
+	int centerX = 700;
+	int centerY = 700;
 };
