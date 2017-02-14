@@ -43,5 +43,6 @@ private:
 	Graphics gfx;
 	/********************************/
 	/*  User Variables              */
+	PlayerShip player;
 	/********************************/
 };

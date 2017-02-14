@@ -42,4 +42,6 @@ void Game::UpdateModel()
 
 void Game::ComposeFrame()
 {
+	player.Draw(gfx);
+	gfx.PutPixel(700, 700, Colors::White);
 }
